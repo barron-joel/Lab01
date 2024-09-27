@@ -129,11 +129,12 @@ visitors %>%
 _How many attractions had between 50,000 and 100,000 visitors in 2022?_
 
 ```{r Ex_f}
-#visitors %>% 
-#  ____(
-#    ______,
-#    ______ ) %>%
-#  count()
+visitors %>%
+    filter(
+      n_2022 >= 50000,
+      n_2022 <= 100000
+    ) %>%
+  count()
 ```
 
 ### Exercise g.
@@ -141,9 +142,9 @@ _How many attractions had between 50,000 and 100,000 visitors in 2022?_
 _How many regions have more than 50 tourist attraction in the data set? (Hint: You will need to tabulate the data before filtering.)_
 
 ```{r Ex_g}
-#visitors %>% 
-#  _____(region) %>%
-#  filter(______)
+visitors %>%
+  count(region) %>%
+  filter (n > 50)
 ```
 
 
